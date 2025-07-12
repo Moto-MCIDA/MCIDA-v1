@@ -37,9 +37,9 @@
 		$html .= '</td>';
 		$html .= '</tr>';
 
-		print($html);					
+		print($html);
 	}
-	function affiche_membre_balade($db, $id){
+	function affiche_membre_balade_admin($db, $id){
 		$booleen = $db->query("SELECT count(*) FROM balade_membre WHERE id_balade = '$id'");
 		$bool = $booleen->fetchColumn();
 		if($bool >= 1){

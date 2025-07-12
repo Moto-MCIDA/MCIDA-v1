@@ -19,11 +19,51 @@ $nom_cop = $_GET['nom_cop'];
 $prenom_cop = $_GET['prenom_cop'];
 $public = $_GET['public'];
 $cotiser = $_GET['cotiser'];
-
 $email = $_GET['email'];
 
-$sql = "UPDATE utilisateur SET nom='$nom', prenom='$prenom', pseudo='$pseudo', age='$age', marque='marque', model='$model', cylindre='$cylindre', couleur='$couleur', ville='$ville', cp='$cp', tel='$tel', adresse1='$adresse1', adresse2='$adresse2', copilote='$copilote', nom_cop='$nom_cop', prenom_cop='$prenom_cop', public='$public', cotiser='$cotiser' WHERE email='$email'";
-$modifier_balade = $db->query($sql);
-header('Location: utilisateur_admin.php');
+$sql = "UPDATE utilisateur SET 
+    nom = :nom,
+    prenom = :prenom,
+    pseudo = :pseudo,
+    age = :age,
+    marque = :marque,
+    model = :model,
+    cylindre = :cylindre,
+    couleur = :couleur,
+    ville = :ville,
+    cp = :cp,
+    tel = :tel,
+    adresse1 = :adresse1,
+    adresse2 = :adresse2,
+    copilote = :copilote,
+    nom_cop = :nom_cop,
+    prenom_cop = :prenom_cop,
+    public = :public,
+    cotiser = :cotiser
+WHERE email = :email";
 
+$stmt = $db->prepare($sql);
+$stmt->execute([
+    ':nom' => $nom,
+    ':prenom' => $prenom,
+    ':pseudo' => $pseudo,
+    ':age' => $age,
+    ':marque' => $marque,
+    ':model' => $model,
+    ':cylindre' => $cylindre,
+    ':couleur' => $couleur,
+    ':ville' => $ville,
+    ':cp' => $cp,
+    ':tel' => $tel,
+    ':adresse1' => $adresse1,
+    ':adresse2' => $adresse2,
+    ':copilote' => $copilote,
+    ':nom_cop' => $nom_cop,
+    ':prenom_cop' => $prenom_cop,
+    ':public' => $public,
+    ':cotiser' => empty($cotiser) ? null : $cotiser,
+    ':email' => $email,
+]);
+
+header('Location: utilisateur_admin.php');
 ?>

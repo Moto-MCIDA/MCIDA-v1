@@ -24,16 +24,130 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 	<title>MCIDA | Administrateur</title>
 
 </head>
+<style>
+	body {
+		font-family: 'Segoe UI', sans-serif;
+		background-color: #f4f4f4;
+		margin: 0;
+		padding: 0;
+	}
+
+	#utilisateur {
+		overflow-x: auto;
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-row-end: 5;
+		grid-column-end: 7;
+		width: 95%;
+		height: 90%;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		background-color: white;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	}
+
+	th, td {
+		padding: 8px 10px;
+		border: 1px solid #ddd;
+		text-align: center;
+	}
+
+	thead {
+		background-color: #6CA0DC;
+		color: white;
+	}
+
+	input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="tel"] {
+		width: 100%;
+		padding: 5px;
+		box-sizing: border-box;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+
+	input[type="submit"], button {
+		padding: 6px 12px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type="submit"][name="modifier"] {
+		background-color: #6CA0DC;
+		color: white;
+	}
+
+	input[type="submit"][name="supprimer"] {
+		background-color: #E74F3F;
+		color: white;
+	}
+
+	button#ajoutBtn {
+		background-color: #43DD9D;
+		color: white;
+		margin: 20px 0;
+	}
+
+	#ajoutModal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+		display: none;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+	}
+
+	#ajoutModal form {
+		background-color: white;
+		padding: 20px;
+		border-radius: 8px;
+		max-width: 700px;
+		width: 90%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		justify-content: space-between;
+		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	}
+
+	#ajoutModal label {
+		flex: 1 1 45%;
+		display: flex;
+		flex-direction: column;
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	#ajoutModal input[type="submit"],
+	#ajoutModal button {
+		flex: 1 1 45%;
+		margin-top: 10px;
+	}
+
+	@media screen and (max-width: 768px) {
+		#ajoutModal label {
+			flex: 1 1 100%;
+		}
+	}
+</style>
 <body>
-	<p><a style="padding: 1% 2.5%;
-			    margin: 1%;
-			    background-color: black;
-			    color: white;" href="admin.php">Page administrateur</a></p>
+	<?php 
+	include_once('../fonction/header.php');
+	?>
 	<div id="utilisateur">
 		<table>
 			<thead>
 				<tr>
-					<td>NOM</td>
+					<td>NOM DE FAMILLE</td>
 					<td>PRÉNOM</td>
 					<td>PSEUDO</td>
 					<td>AGE</td>
@@ -52,7 +166,7 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 					<td>PRENOM COP</td>
 					<td>PUBLIC</td>
 					<td>COTISATION</td>
-					<td>MODIFIER</td>
+					<td>MODIFIER / SUPPRIMER</td>
 				</tr>
 			</thead>
 			<?php 
@@ -100,19 +214,68 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 			}
 			print($html);
 			?>
-		</table>		
+		</table>	
+		<button id="ajoutBtn">➕ Ajouter un utilisateur</button>   
 	</div>
+	<div id="ajoutModal" style="display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    background: white;
+    border: 2px solid black;
+    padding: 2%;
+    z-index: 999;">
+	<span onclick="document.getElementById('ajoutModal').style.display='none'" 
+      style="position: absolute; top: 10px; right: 15px; font-size: 20px; font-weight: bold; cursor: pointer;">
+    ✖
+</span>
+    <form method="post" action="ajout_utilisateur_admin.php">
+        <label>Nom: <input type="text" name="nom" required></label>
+        <label>Prénom: <input type="text" name="prenom" required></label>
+        <label>Pseudo: <input type="text" name="pseudo" required></label>
+        <label>Age: <input type="date" name="age" required></label>
+        <label>Marque: <input type="text" name="marque" required></label>
+        <label>Modèle: <input type="text" name="model" required></label>
+        <label>Cylindrée: <input type="number" name="cylindre" required></label>
+        <label>Couleur: <input type="text" name="couleur" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Ville: <input type="text" name="ville" required></label>
+        <label>Code postal: <input type="number" name="cp" required></label>
+        <label>Téléphone: <input type="tel" name="tel" pattern="[0-9]{10}" required></label>
+        <br><br>
+        <input type="submit" name="ajouter" value="Ajouter" style="padding: 5px 10px;"> 
+	</form>
+</div>
 </body>
 </html>
 
 <script type="text/javascript">
 
-	function updateDiv()
-	{ 	
-	    $('#notif_img ').load(window.location.href + " #notif_img > a " );
+	function updateDiv() {
+	    $('#notif_img').load(window.location.href + " #notif_img > a");
 	}
+	setInterval(updateDiv, 5000);
 
-	setInterval('updateDiv()', 5000);
+	document.addEventListener('DOMContentLoaded', function () {
+		const ajoutModal = document.getElementById('ajoutModal');
+		const btnAjout = document.getElementById('ajoutBtn');
+		const closeBtn = ajoutModal.querySelector('span');
+
+		btnAjout.addEventListener('click', () => {
+			ajoutModal.style.display = 'flex';
+		});
+
+		if (closeBtn) {
+			closeBtn.addEventListener('click', () => {
+				ajoutModal.style.display = 'none';
+			});
+		}
+	});
+
+	$("#img_top > a").attr("href", "admin.php");
 
 </script>
 

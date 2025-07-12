@@ -58,6 +58,95 @@ function blocInfoBalade($id_groupe, $db){
 		$html .= '</div>';
     echo $html;
 }
+
+function affiche_membre_balade($db, $id){
+		$booleen = $db->query("SELECT count(*) FROM balade_membre WHERE id_balade = '$id'");
+		$bool = $booleen->fetchColumn();
+		if($bool >= 1){
+			$balade = $db->prepare("SELECT * FROM balade_membre WHERE id_balade = '$id' ORDER BY reponse ASC");
+			$balade->execute();
+	    	$html = '<h5>Tableau des présences</h5>';
+			$html .= '<table style="
+			width: 100%;
+			font-size: small;
+			font-weight: 400;
+			padding: 10px 2.5%;
+			margin: auto;">';
+			$html .= '<thead>';
+			$html .= '<tr>';
+			$html .= '<td style="
+			background-color: #1D63EB;
+			text-align: center;
+			font-size: small;
+			color: white;
+			border-radius: 15px 15px 0 0;
+			width:20%">NOM</td>';
+			$html .= '<td style="
+			background-color: #1D63EB;
+			text-align: center;
+			font-size: small;
+			color: white;
+			border-radius: 15px 15px 0 0;
+			width:20%">PRÉNOM</td>';
+			$html .= '<td style="
+			background-color: #1D63EB;
+			text-align: center;
+			font-size: small;
+			color: white;
+			border-radius: 15px 15px 0 0;
+			width:20%">NOMBRE PERSONNES</td>';
+			$html .= '<td style="
+			background-color: #1D63EB;
+			text-align: center;
+			font-size: small;
+			color: white;
+			border-radius: 15px 15px 0 0;
+			width:20%">PRÉSENCE</td>';
+			$html .= '</tr>';
+			$html .= '</thead>';
+			while ($res = $balade->fetch()) {
+				$id_utilisateur = $res['id_utilisateur'];
+				$profil = $db->query("SELECT * FROM utilisateur WHERE id = '$id_utilisateur'");
+	    		$res_profil = $profil->fetch();
+	    		$description = $db->query("SELECT * FROM balade_membre WHERE id_utilisateur = '$id_utilisateur' AND id_balade = '$id'");
+	    		$res_description = $description->fetch();
+	    		if ($res_description['reponse'] == 1) {
+	    			$html .= '<tr class="like" style="box-shadow: none;">';
+	    			$rep = 'Présent';
+	    		}elseif ($res_description['reponse'] == 2){
+	    			$html .= '<tr class="jsp" style="box-shadow: none;">';
+	    			$rep = 'Ne sais pas';
+	    		}else{
+	    			$html .= '<tr class="dislike" style="box-shadow: none;">';
+	    			$rep = 'Pas présent';
+	    		}
+                if ($res_profil) {
+                    $html .= '<td style="
+                    color: white;">'.$res_profil['nom'].'</td>';
+                    $html .= '<td style="
+                    color: white;">'.$res_profil['prenom'].'</td>';
+                    $html .= '<td style="
+                    color: white;">'.$res_description['nb_prs'].'</td>';
+                    $html .= '<td style="
+                    color: white;">'.$rep.'</td>';
+                    $html .= '</tr>';
+                } else {
+                    $html .= '<td style="
+                    color: white;">Ancien memebre</td>';
+                    $html .= '<td style="
+                    color: white;">Ancien memebre</td>';
+                    $html .= '<td style="
+                    color: white;">...</td>';
+                    $html .= '<td style="
+                    color: white;">...</td>';
+                    $html .= '</tr>';
+                }
+			    
+			}
+			$html .= '</table>';
+			print($html) ;
+		}
+	}
 /******************************************************************************************************************************************** */
 // fonction recup_nom_balade avec comme parametre a variable de connexion a la db et l'id de la balade 
 // sert a recuperer le nom et la date de sortie de la sortie 

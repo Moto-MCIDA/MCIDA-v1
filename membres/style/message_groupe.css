@@ -7,13 +7,33 @@
     height: 90%;
     margin: auto;
     margin-bottom: 10px;
+    overflow-y: auto;
 
     background-color: rgba(29, 99, 235, 0.15);
     border-radius: 15px;
 }
+
+#information::-webkit-scrollbar {
+      width: 7.5px; 
+}
+
+#information::-webkit-scrollbar-track {
+    background-color: rgba(29, 99, 235, 0.5);
+    border-radius: 25px;
+}
+
+#information::-webkit-scrollbar-thumb {
+    padding: 1%;
+    background-color: rgba(29, 99, 235, 1);
+    border-radius: 25px;
+    width: 50px; 
+}
+
+
 #information > p:nth-child(1),
 #information > p:nth-child(2),
-#information > p:nth-child(3){
+#information > p:nth-child(3),
+#information > p:nth-child(4){
     background-color: white;
     padding: 10px 25px;
     font-size: large;

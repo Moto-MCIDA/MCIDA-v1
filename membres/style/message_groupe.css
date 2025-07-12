@@ -1,81 +1,45 @@
-#information {
+#information{
     grid-row-start: 2;
     grid-column-start: 1;
     grid-row-end: 5;
     grid-column-end: 3;
     width: 95%;
-    height: auto;
+    height: 90%;
     margin: auto;
     margin-bottom: 10px;
-    padding: 25px 20px;
-    background-color: rgba(29, 99, 235, 0.07);
-    border-radius: 20px;
-    font-family: 'Segoe UI', sans-serif;
-    color: #1D63EB;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
 
-#information h2 {
-    font-size: 1.75rem;
-    margin-bottom: 10px;
-    color: #1D63EB;
-    text-align: center;
-}
-
-#information .info-section {
-    background-color: white;
+    background-color: rgba(29, 99, 235, 0.15);
     border-radius: 15px;
-    padding: 15px 20px;
-    margin: 10px auto;
-    width: 90%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    line-height: 1.6;
 }
-
-#information .info-section strong {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #1D63EB;
-}
-
-#participants-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px auto 0 auto;
-    justify-content: center;
-}
-
-.participant-card {
+#information > p:nth-child(1),
+#information > p:nth-child(2),
+#information > p:nth-child(3){
     background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 250px;
-    max-width: 300px;
-    transition: transform 0.2s ease;
-}
-
-.participant-card:hover {
-    transform: scale(1.02);
-}
-
-.participant-card img {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #1D63EB;
-}
-
-.participant-card span {
+    padding: 10px 25px;
+    font-size: large;
     color: #1D63EB;
-    font-weight: 500;
-    font-size: 1rem;
+    width: 85%;
+    margin: 2.5% auto;
+    border-radius: 15px;
+}
+
+#information > p:nth-child(3){
+    min-height: 20%;
+    max-height: 50%;
+    font-size: medium;
+    overflow-y: auto;
+}
+#information > p:nth-child(3)::-webkit-scrollbar{
+    width: 7.5px; 
+    height: 90%;
+}
+
+#information > p:nth-child(3)::-webkit-scrollbar-track{
+    background-color: rgba(29, 99, 235, 0.5);
+}
+
+#information > p:nth-child(3)::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 #message_groupe_ancien{

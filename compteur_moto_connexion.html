@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="image/MCIDA_icon.png">
+	<meta http-equiv="refresh" content="10;url=membres/notification.php" /> 
+	<title>MCIDA | Chargement</title>
+</head>
+	<div class="progress-bar">
+		<img id="compteur" src="image/inscription/compteur_kilometre.png">
+		<span class="number" data-value="100"></span>
+		<div id="aiguille_div">
+			<img id="aiguille" src="image/inscription/aiguille.png">
+		</div>
+		<svg height="150" width="150" class="circle">
+			<circle cx="75" cy="75" r="72.5" stroke-width="2.5" fill="none"/>
+		</svg>
+	</div>
+	<div class="message_fin">
+		<img class="logo" src="image/inscription/moto_charge.png">
+	</div>
+		<audio id="myAudio" controls hidden>
+		  <source src="image/inscription/moto_sound.ogg" type="audio/ogg">
+		  <source src="image/inscription/moto_sound.mp3" type="audio/mpeg">
+		  Your browser does not support the audio element.
+		</audio>
+</body>
+</html>
+<style type="text/css">
+	body,html{
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: "Geneva", sans-serif;
+	}
+	#compteur{
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+	}
+	.message_fin{
+		position: relative;
+		width: 100%;
+		height: 50%;
+		border-radius: 50%;
+		outline-offset: -1px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		z-index: 0;
+	}
+	.logo{
+		height: 25%;
+		position: absolute;
+		left: 0%;
+		top: 25%;
+		z-index: -1;
+		visibility: visible;
+		animation: roule 2s linear forwards;
+	}
+	.text{
+		position: absolute;
+		left: 50%;
+		font-weight: bold;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		height: 10%;
+	    padding-bottom: 0;
+	    margin: auto;
+	    text-align: center;
+	    background-color: black;
+	    border: none;
+	    color: #fff;
+	    font-size: 100%;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+	.check{
+		width: 10%;
+	}
+	a{
+		position: absolute;
+		left: 50%;
+		top: 20%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+	    margin: auto;
+	    text-align: center;
+	    border: none;
+	    padding: 5%;
+	    color: black;
+	    outline: none;
+	    font-size: 90%;
+	}
+	a:hover{
+	    font-weight: bold;
+	    color: #4a443a;    
+	}
+	.messEmail{
+		top: 75%;
+		padding-bottom: 1.5%;
+	}
+	.progress-bar{
+		position: relative;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		outline-offset: -1px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: block;
+	}
+	.progress-bar::after,
+	.number,
+	#aiguille_div{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	#aiguille_div{
+	    width: 100%;
+	    height: 100%;
+	}
+	#aiguille{
+		z-index: 1;
+		width: 100%;
+    	object-fit: cover;
+		animation: aiguille 8s linear forwards;
+	}
+	.number{
+		top: 110%;
+		font-weight: bold;
+		font-size: 100%;
+	}
+	.progress-bar::after{
+		content: '';
+		width: 110px;
+		height: 110px;
+		border-radius: inherit;
+		outline: inherit;
+	}
+	.circle{
+		stroke-dasharray: 455;
+	    stroke-dashoffset: 455;
+	    transform: rotate(90deg);
+	    animation: bar-fill 8s linear forwards;
+	}
+	@keyframes bar-fill{
+		0%{
+			stroke-dashoffset: 455;
+			stroke: green;
+		}
+		25%{
+			stroke: yellow;
+		}
+		50%{
+			stroke: orange;
+		}
+		100%{
+			stroke-dashoffset: 0;
+			stroke: red;
+		}
+	}
+	@keyframes aiguille{
+		0%{
+			transform: rotateZ(0deg);
+		}
+		25%{
+		}
+		50%{
+		}
+		100%{
+			transform: rotateZ(290deg);
+		}
+	}
+	@keyframes roule{
+	  from {
+	    margin-left: 15%;
+	    transform: rotateZ(0deg);
+	  }
+
+	  to {
+	    margin-left: 85%;
+	    transform: rotateZ(-45deg);
+	    visibility: hidden;
+	  }
+	}
+	.disclaimer{
+		display: none;
+	}
+	@media screen and (max-width: 700px) {
+		.text{
+			width: 95%;
+			font-size: 90%;
+		}
+		.logo{
+			height: 10%;
+			top: 25%;
+		}
+		@keyframes roule{
+		  from {
+		    margin-left: 10%;
+		    transform: rotateZ(0deg);
+		  }
+
+		  to {
+		    margin-left: 80%;
+		    transform: rotateZ(-45deg);
+		    visibility: hidden;
+		  }
+		}
+	}
+</style>
+<script type="text/javascript">
+	function active_audio(){
+		var x = document.getElementById("myAudio").play()
+	}
+	function pause_audio(){
+		var x = document.getElementById("myAudio").pause()
+	}
+	/*function reload(){
+		document.location.href="index.php";
+	}*/
+	let counter = 0;
+	setInterval(() => {
+		const el = document.querySelector('.number');
+		const elValue = Number(el.getAttribute('data-value'));
+		const mess = document.querySelector('.message_fin');
+		const block = document.querySelector('.progress-bar');		
+		if (counter < elValue-1){
+			counter++;
+			el.innerHTML = `${counter}%`;
+		}else if(counter == elValue-1){
+			counter++;
+			el.innerHTML = `${counter}%`;
+			active_audio();
+		}
+		else{
+			el.innerHTML = `111%`;
+			setTimeout(pause_audio, 2000);
+			mess.setAttribute("style","display: block;");
+			block.setAttribute("style","display: none;");
+
+		}
+	}, 80);
+</script>

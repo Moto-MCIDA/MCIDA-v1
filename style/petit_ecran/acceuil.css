@@ -1,0 +1,106 @@
+@media screen and (max-width: 700px) {
+	#img_top{
+		height: 25%;
+	}
+	#img_top_banniere_logo{
+		width: 35%;
+	}
+	#barre_navigation{
+		width: 95%;
+		flex-direction: column;
+		border-radius: 10px;
+	}
+	#barre_navigation a{
+		padding: 15px 0px;
+		width: 100%;
+		height: 100%;
+	}
+	#barre_navigation a:nth-child(1):hover{
+		border-bottom: 1px solid;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+
+	}
+	#barre_navigation a:nth-child(5):hover{
+		border-top: 1px solid;
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+	}
+	#barre_navigation a:hover{
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-left: none;
+		border-right: none;
+		font-weight: bold;
+	}
+	div{
+		width: 95%;
+	}
+	div p:nth-child(1) {
+	    padding: 10px;
+	    font-size: 100%;
+	    width: 55%;
+	}
+	div p:nth-child(2) {
+	    width: 100%;
+	}
+	tr{
+		flex-direction: column;
+		margin-bottom: 5%;
+	}
+	td:nth-child(1) {
+	    width: 100%;
+	}
+	td:nth-child(2) {
+	    width: 100%;
+	}
+	#information{
+		padding: 15px 0;
+		margin: auto;
+	}
+	#balade{
+		height: auto;
+    	margin-top: 10%;
+	}
+	#titre{
+		padding-left: 2.5%;
+	    margin-top: 2.5%;
+	    position: absolute;
+	}
+	#balade td{
+		width: 90%;
+		margin: auto;
+	}
+	#balade h4{
+		font-size: 150%;
+		margin: 2.5% 0;
+	}
+	#balade p{
+		font-size: 100%;
+	    height: 0%;
+	    max-height: 100px;
+	}
+	#contact{
+		height: 50%;
+		flex-direction: column;
+	}
+	#contact div:nth-child(1) {
+		width: 100%;
+    	height: 50%;
+	}
+	#contact div:nth-child(2){
+		width: 45%;
+	}
+	#contact div:nth-child(2) p {
+	    font-size: 75%;
+	    width: 100%;
+	}
+	#weekend_img{
+		height: auto;
+	}
+	#membre_public{
+		width: 95%;
+	}
+}

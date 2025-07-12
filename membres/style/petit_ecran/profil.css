@@ -1,0 +1,80 @@
+@media screen and (max-width: 700px) {
+	#block_principal{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-end: 6;
+        width: 95%;
+        height: calc(95% - 25px);
+        margin-top: 45px;
+	}
+	#grandTableau{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0;
+    }
+    #grandTableau tr{
+        flex-direction: column;
+    }
+    #grandTableau td:nth-child(1) {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+    }
+    #bloc1 > #grandTableau > div:nth-child(1), 
+    #bloc2 > #grandTableau > div:nth-child(1), 
+    #bloc3 > #grandTableau > div:nth-child(1){
+		width: 110px;
+		height: 110px;
+        padding: 25px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    #bloc1 > #grandTableau > div:nth-child(2) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(2) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(2) > h4,
+    #bloc1 > #grandTableau > div:nth-child(3) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(3) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(3) > h4,
+    #bloc1 > #grandTableau > div:nth-child(4) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(4) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(4) > h4,
+    #bloc1 > #grandTableau > div:nth-child(5) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(5) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(5) > h4{
+        width: 30%;
+        height: auto;
+        line-height: inherit;
+    }
+    #bloc1 > #grandTableau > div, #bloc2 > #grandTableau > div, #bloc3 > #grandTableau > div{
+        width: 90%;
+        height: auto;
+        line-height: inherit;
+        font-size: x-small;
+    }
+    input[type=text], input[type="tel" i], input[type=password], input[type=date], input[type=number], select, textarea{
+        width: 65%;
+        height: auto;
+        line-height: inherit;
+        font-size: x-small;
+    }
+    #bloc1 > #grandTableau > div:nth-child(1) > label, #bloc3 > #grandTableau > div:nth-child(1) > label{
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+    }
+    #bloc1 > #grandTableau > div, #bloc2 > #grandTableau > div, #bloc3 > #grandTableau > div{
+        font-size: small;
+        margin: 5px auto;
+    }
+    #button_bloc{
+        width: 50%;
+        left: 25%;
+    }
+    p{
+        font-size: small;
+    }
+}

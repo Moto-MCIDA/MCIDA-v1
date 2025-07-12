@@ -1,0 +1,40 @@
+@media screen and (max-width: 700px){
+	#img_top_banniere_logo{
+		width: 25%;
+    	margin-left: 10%;
+	}
+	#img_top h1{
+		font-size: 300%;
+    	padding-left: 35%;
+    	width: 65%;
+	}
+	#block_principal{
+		height: 75%;
+	}
+	#sous_box{
+		height: 450px;
+		margin-top: 25%;
+	}
+	.bloc{
+		flex-direction: column;
+	}
+	img{
+		width: 90%;
+		margin: auto;
+	}
+	#paragraphe{
+		width: 100%;	
+		margin-top: 5%;	
+	}
+	.button{
+	    margin: 2.5% auto;
+	}
+	#bloc3 select{
+		width: 100%;
+		margin: 0 auto;
+	}
+	#bloc3 #buttonn3 {
+	    width: 75%;
+	    margin: 0 auto;
+	}
+}

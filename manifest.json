@@ -1,0 +1,22 @@
+{
+  "short_name": "MCIDA",
+  "name": "Moto Club Ivre D'Aventure",
+  "icons": [
+    {
+      "src": "images/MCIDA_logo.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/MCIDA_logo.png",
+      "type": "image/png",
+      "sizes": "310x310",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/App/index.php",
+  "background_color": "#1D63EB",
+  "display": "standalone",
+  "orientation": "portrait"
+}

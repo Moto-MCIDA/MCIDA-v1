@@ -66,6 +66,8 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 		<?php 
 			$id_groupe = $_GET['id'];
 			blocInfoBalade($id_groupe, $db);
+
+    		affiche_membre_balade($db, $id_groupe); // on affiche le tableau des présences
 		?>
 
 

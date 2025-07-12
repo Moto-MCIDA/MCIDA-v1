@@ -41,7 +41,7 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 						<a href="utilisateur_admin.php">Informations utilisateurs</a>	
 					</td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td>
 						<a href="balade_admin.php">Information balades</a>
 					</td>
@@ -50,7 +50,7 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 					<td>
 						<a href="public_admin.php">Balades pages public</a>
 					</td>
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>
 	</div>
@@ -65,6 +65,8 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 	}
 
 	setInterval('updateDiv()', 5000);
+	$("#img_top > a").attr("href", "../index.php");
+	$("#bar_profil > div > a").attr("href", "../index.php");
 
 </script>
 

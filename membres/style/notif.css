@@ -1,0 +1,132 @@
+#notif_bloc{
+    grid-row-start: 2;
+    grid-column-start: 2;
+
+    grid-row-end: 5;
+    grid-column-end: 6;
+        
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    overflow-y: auto;
+
+    background-color: rgba(29, 99, 235, 0.15);
+    border-radius: 15px;
+}
+
+#tableau_notif{
+    width: 100%;
+    height: 100%;
+}
+#notif_bloc > p{
+    width: 700px;
+    height: auto;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border-radius: 15px;
+}
+
+#notif_bloc > div{
+    height: auto;
+    width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#notif_bloc > div > a:nth-child(1) h5 {
+    color: #1D63EB;
+    font-size: medium;
+}
+#nnLu {
+    width: 550px;
+    height: auto;
+    text-align: left;
+    padding: 0 10px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2.5px 2.5px 5px black;
+}
+#lu{
+    position: relative;
+    width: 550px;
+    height: auto;
+    text-align: left;
+    padding: 0 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: none;
+}
+#lu *{
+    font-weight: 100;
+}
+#lu .check{
+    width: fit-content;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: #1D63EB;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+}
+#notif_bloc > div > a:nth-child(2) {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    margin: auto 0;
+    text-align: center;
+    background-color: #1D63EB;
+    color: white;
+    border-radius: 15px;
+}
+#notif_bloc > div > a:nth-child(2):hover {
+    background-color: rgb(128, 0, 0);
+}
+
+
+#supprime_tt{
+    width: 700px;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    background-color: #1D63EB;
+    color: white;
+    border-radius: 15px;
+}
+#supprime_tt:hover{
+    background-color: rgb(128, 0, 0); 
+}
+
+
+
+#notif_bloc::-webkit-scrollbar {
+      width: 7.5px; 
+}
+
+#notif_bloc::-webkit-scrollbar-track {
+    background-color: rgba(29, 99, 235, 0.5);
+    border-radius: 25px;
+    margin: 15px;
+}
+
+#notif_bloc::-webkit-scrollbar-thumb{
+    padding: 1%;
+    background-color: rgba(29, 99, 235, 1);
+    border-radius: 25px;
+    width: 50px; 
+}
+a > p{
+    font-size: small;
+    color: #1D63EB;
+    font-weight: 600;
+}

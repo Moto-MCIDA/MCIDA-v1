@@ -1,0 +1,164 @@
+
+
+#grandTableau{
+    width: 700px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0;
+    margin: auto;
+}
+#grandTableau tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#grandTableau > div:nth-child(1){
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 3;
+    border-radius: 25px;
+}
+#grandTableau > div:nth-child(1) > img{
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 25px;
+}
+#grandTableau > div{
+    background-color: white;
+    padding: 0px 10px;
+    font-size: large;
+    color: #1D63EB;
+    width: 350px;
+    height: 75px;
+    margin: 2.5% auto;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+    font-size: medium;
+}
+
+#grandTableau > div:nth-child(2){
+    grid-row-start: 1;
+    grid-column-start: 3;
+
+    grid-row-end: 2;
+    grid-column-end: 7;
+}
+#grandTableau > div:nth-child(3){
+    grid-row-start: 2;
+    grid-column-start: 3;
+
+    grid-row-end: 3;
+    grid-column-end: 7;
+}
+#grandTableau > div:nth-child(4){
+    grid-row-start: 3;
+    grid-column-start: 3;
+
+    grid-row-end: 4;
+    grid-column-end: 7;
+}
+#grandTableau > div:nth-child(5){
+    grid-row-start: 4;
+    grid-column-start: 3;
+
+    grid-row-end: 5;
+    grid-column-end: 7;
+}
+#grandTableau > div:nth-child(6){
+    grid-row-start: 5;
+    grid-column-start: 2;
+    
+    grid-row-end: 6;
+    grid-column-end: 6;
+}
+#block_principal{ 
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-end: 5;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+
+    background-color: rgba(29, 99, 235, 0.15);
+    border-radius: 15px;
+
+}
+#block_principal::-webkit-scrollbar{
+    display: hidden;
+    width: 0;
+}
+
+#box_defilement{
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.bloc{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.none_b{
+    display: none;
+}
+
+
+#button_bloc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    left: 32.5%;
+    width: 35%;
+    height: 50px;
+}
+
+p {
+    text-align: center;
+    font-family: monospace;
+    background-color: #1D63EB;
+    font-size: large;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    vertical-align: middle;
+    margin: 0 1%;
+    border-radius: 10px 10px 0 0;
+}
+p:hover {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+form > div{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+form > div > #bouton{
+    width: 100%;
+}

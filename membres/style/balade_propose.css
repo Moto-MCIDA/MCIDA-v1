@@ -1,0 +1,443 @@
+#corps{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 7;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    margin-bottom: 10px; 
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+#balade_propose{
+    width: 45%;
+    height: 95%;
+    overflow-y: auto;
+    margin: 1%;
+    position: relative;
+
+    background-color: rgba(29, 99, 235, 0.15);
+    border-radius: 15px;
+}
+#balade_propose::-webkit-scrollbar{
+    width: 7.5px; 
+    height: 90%;
+}
+
+#balade_propose::-webkit-scrollbar-track{
+    background-color: rgba(29, 99, 235, 0.5);
+    border-radius: 25px;
+    margin: 15px;
+}
+
+#balade_propose::-webkit-scrollbar-thumb{
+    padding: 1%;
+    background-color: rgba(29, 99, 235, 1);
+    border-radius: 25px;
+    width: 50px; 
+}
+#balade_propose > h5{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2.5%;
+}
+#balade_propose > h2{
+    background-color: white;
+    padding: 20px;
+    font-size: large;
+    color: #1D63EB;
+    width: calc(90% - 10px);
+    margin: 2.5% auto;
+    border-radius: 15px;
+}
+
+#propose{
+    width: 45%;
+    height: 95%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: rgba(29, 99, 235, 0.15);
+    border-radius: 15px;
+}
+form{
+    display: grid; 
+
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    gap: 10px;
+    width: 450px;
+    margin: 10px auto;
+}
+form > select:nth-child(1){
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 4;
+    
+    width: 210px;
+}
+form > input:nth-child(2){
+    grid-row-start: 1;
+    grid-column-start: 4;
+
+    grid-row-end: 2;
+    grid-column-end: 7;
+    
+    width: 195px;
+}
+form > div:nth-child(3){
+    grid-row-start: 2;
+    grid-column-start: 1;
+    
+    grid-row-end: 3;
+    grid-column-end: 7;
+    
+    width: 450px;
+}
+form > textarea:nth-child(4) {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 7;
+    
+    width: 425px;
+}
+
+textarea {
+    height: 80%;
+}
+.js .input-file-container {
+    position: relative;
+    width: 100%;
+}
+form > div:nth-child(5){
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    grid-column-end: 2;
+}
+form > input:nth-child(6){
+    grid-row-start: 5;
+    grid-column-start: 2;
+    grid-row-end: 6;
+    grid-column-end: 6;
+}
+#title{
+    background-color: white;
+    padding: 25px;
+    font-size: large;
+    color: #1D63EB;
+    width: 400px;
+    margin: 2.5% auto;
+    border-radius: 15px;
+}
+
+input[type=text],
+input[type=date],
+select,
+textarea{
+    background-color: white;
+    padding: 10px;
+    font-size: medium;
+    color: #1D63EB;
+    width: 80%;
+    margin: 0.5% auto;
+    border-radius: 10px;
+    border: none;
+}
+
+input[type=text]::placeholder,
+input[type=date]::placeholder,
+select::placeholder,
+textarea::placeholder{
+    color: #1d62ebaf;
+}
+input[type=text]:focus,
+input[type=date]:focus,
+select:focus,
+textarea:focus{
+    border: none;
+    border-bottom: 4px solid #1D63EB;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1D63EB;
+    border: none;
+}
+input[type=text]:focus::placeholder,
+input[type=date]:focus::placeholder,
+select:focus::placeholder,
+textarea:focus::placeholder{
+    color: #1D63EB;
+    border: none;
+}
+#button,input[type=submit]{
+    width: 40%;
+    padding: 10px;
+    margin: 2.5% auto;
+    text-align: center;
+    background-color: #1D63EB;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 100%;
+}
+#button:hover,input[type=submit]:hover{
+    font-weight: 700;
+}
+#button.supp:hover{
+    background-color: rgb(128, 0, 0);
+}
+#modif{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-row-end: 5;
+    grid-column-end: 6;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: rgba(29, 99, 235, 0.15);
+    border-radius: 15px;
+}
+#modif > form{
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    height: auto;
+    width: 600px;
+
+    overflow: hidden;
+}
+#modif > #title{
+    width: 550px;
+}
+#modif > form > select:nth-child(1){
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 4;
+    width: 275px;
+    margin-left: 0;
+    
+}
+#modif > form > input:nth-child(2){
+    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-end: 2;
+    grid-column-end: 7;
+    width: 275px;
+    margin-right: 0;
+    
+}
+#modif > form > input:nth-child(3){
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 7;
+    width: 570px;
+}
+#modif > form > textarea:nth-child(4) {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 7;
+    width: 575px;
+    
+}
+#listDiv{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-row-end: 7;
+    grid-column-end: 7;
+    overflow: auto;
+    width: 595px;
+    flex-direction: column;
+    margin: 10px auto;
+}
+#modif > form > input:nth-child(7){
+    grid-row-start: 7;
+    grid-column-start: 2;
+
+    grid-row-end: 8;
+    grid-column-end: 6;
+}
+#modif > form > .js .input-file-container{
+    grid-row-start: 7;
+    grid-column-start: 1;
+
+    grid-row-end: 8;
+    grid-column-end: 2;
+}
+#listDiv > p{
+    color: #1D63EB;
+    font-weight: 400;
+}
+
+#listDiv::-webkit-scrollbar{
+    width: 7.5px; 
+    height: 90%;
+}
+
+#listDiv::-webkit-scrollbar-track{
+    background-color: rgba(29, 99, 235, 0.5);
+    border-radius: 25px;
+}
+
+#listDiv::-webkit-scrollbar-thumb{
+    padding: 1%;
+    background-color: rgba(29, 99, 235, 1);
+    border-radius: 25px;
+    width: 50px; 
+}
+
+
+
+
+textarea {
+    height: 80%;
+}
+.js .input-file-container {
+    position: relative;
+    width: 100%;
+}
+form > div:nth-child(5){
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    grid-column-end: 2;
+}
+form > input:nth-child(6){
+    grid-row-start: 5;
+    grid-column-start: 2;
+    grid-row-end: 6;
+    grid-column-end: 6;
+}
+
+
+
+
+#doc{
+    height: auto;
+    margin: 0 auto;
+    width: 95%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#doc > a:nth-child(1) {
+    width: 400px;
+    height: auto;
+    text-align: left;
+    padding: 0 10px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 10px;
+}
+#doc > a:nth-child(1) h5{
+   color: #1D63EB;
+   font-size: medium;
+}
+#doc > a:nth-child(2) {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    margin: auto 0;
+    text-align: center;
+    background-color: #1D63EB;
+    color: white;
+    border-radius: 15px;
+}
+#doc > a:nth-child(2):hover{
+   background-color: rgb(128, 0, 0);
+   color: white;
+   font-weight: 700;
+}
+#doc > a:nth-child(1):hover h5{
+   font-weight: 400;
+}
+
+/* styles de base si JS est activé */
+.js .input-file-container {
+    width: 50px;
+}
+
+.js .input-file-trigger {
+    color: #1D63EB;
+    background-color: transparent;
+    margin: 1%;
+    width: auto;
+    text-align: center;
+    display: block;
+    padding: 2.5px 0;
+    font-size: 150%;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.js .input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    padding: 14px 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* quelques styles d'interactions */
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+    transform: scale(1.2);
+    font-weight: 700;
+}
+
+/* styles du retour visuel */
+.file-return {
+    margin: 0;
+    display: none;
+}
+
+.file-return:not(:empty) {
+    margin: 1em 0;
+}
+
+.js .file-return {
+    background-color: #1D63EB;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+    position: absolute;
+    bottom: -45%;
+    left: 2.5%;
+    z-index: -1;
+    margin: 0;
+    transform: translate(0%, 50%);
+    width: 200px;
+    height: 15px;
+}
+
+/* on complète l'information d'un contenu textuel uniquement lorsque le paragraphe n'est pas vide */
+.js .file-return:not(:empty):before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+}

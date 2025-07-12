@@ -1,0 +1,151 @@
+@media screen and (max-width: 700px) {
+	#message{    
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-row-end: 6;
+		grid-column-end: 7;
+		width: 95%;
+		height: calc(95% - 70px);
+		margin-top: 90px;
+	}
+	#nom{
+		font-size: 100%;
+	}
+	form > div > #bouton{
+		width: 95%;
+	}
+	#gauche{
+		margin-right: 10%;
+		min-width: 50%;
+		padding: 1.5% 2.5%;
+	}
+	#droite{
+		margin-left: 10%;
+		min-width: 50%;
+		padding: 1.5% 2.5%;
+	}
+	#texte{
+		width: 80%;
+		font-size: x-small;
+	}
+	form > div{
+		width: 95%;
+	}
+	#nom_bar > div{
+	    position: relative;
+	    height: 60%;
+	    width: auto;
+	    padding: 0 0 0 12.5% !important;
+	    margin: auto 0;
+	    border-radius: 5px;
+	    margin-left: 2.5%;
+	}
+
+	#nom_bar > div > img{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    top: 0;
+	    right: 0;
+	    left: 0;
+	    bottom: 0;
+	    object-fit: cover;
+	    object-position: 50% 50%;
+	    border-radius: 5px;
+	    border: 2.5px solid white;
+	}
+	form > div:nth-child(2) {
+	    width: 70%;
+	}
+	form > div:nth-child(1) {
+	    width: 30%;
+	}
+	.js .file-return {
+    	transform: translate(0%, 25%);
+    }
+
+	#information {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-row-end: 3;
+		grid-column-end: 7;
+		width: 95%;
+		height: 20px;
+		margin: auto;
+		background-color: transparent;
+		position: relative;
+		margin-top: 45px;
+	}
+	#information > p:nth-child(1), #information > p:nth-child(2), #information > p:nth-child(3){
+		display: none;
+	}
+	#image_bloc_info {
+		display: none;
+	}
+	#information > div:nth-child(5) > a{
+		position: absolute;
+		font-size: small;
+		line-height: 30px;
+		vertical-align: middle;
+	}
+
+
+	.profilPhoto {
+		width: 30px;
+		height: 30px;
+		margin: 2.5px;
+		object-fit: cover;
+		border-radius: 50%;
+		position: absolute;
+		top: 2.5px;
+	}
+	li > strong {
+		margin: 2.5px;
+		position: absolute;
+		top: 10px;
+		left: 45px;
+		font-size: x-small;
+	}
+	li > p {
+		margin-top: 40px;
+	}
+	#droite,
+	#gauche {
+		min-height: auto;
+	}
+	#image_bloc_download {
+		grid-row-start: 3;
+		grid-column-start: 1;
+		grid-row-end: 6;
+		grid-column-end: 7;
+		display: flex;
+		flex-direction: row;
+		max-width: 95%;
+		height: 95%;
+		overflow-x: auto;
+	}
+	#boutton{
+		width: 80%;
+		padding: 10px;
+		margin: 50px auto;
+		text-align: center;
+		background-color: #1D63EB;
+		border: none;
+		border-radius: 15px;
+		color: #fff;
+		font-size: x-small;
+		vertical-align: middle;
+	}
+	.retour {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-row-end: 3;
+		grid-column-end: 4;
+	}
+	.telecharger {
+		grid-row-start: 2;
+		grid-column-start: 4;
+		grid-row-end: 3;
+		grid-column-end: 7;
+	}
+}

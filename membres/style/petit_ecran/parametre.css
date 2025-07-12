@@ -1,0 +1,171 @@
+@media screen and (max-width: 700px) {
+    #parametre_bloc{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-end: 6;
+        width: 95%;
+        height: calc(95% - 25px);
+        margin-top: 45px;
+		box-shadow: 2.5px 2.5px 10px rgba(0, 0, 0, 1);
+    }
+    #tableau_choix > tbody > tr{
+        display: flex;
+        flex-direction: column;
+    }
+    #tableau_choix > tbody > tr > td:nth-child(1) {
+        height: 10%;
+        width: 100%;
+    }
+    #tableau_choix > tbody > tr > td:nth-child(2) {
+        height: 90%;
+        width: 100%;
+    }
+    #grandTableau{
+        width: 100%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0;
+    }
+    #grandTableau tr{
+        flex-direction: column;
+    }
+    #grandTableau td:nth-child(1) {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+    }
+    #bloc4 > #grandTableau td:nth-child(1) {
+        width: 100%;
+        margin: auto;
+    }
+    #grandTableau td:nth-child(2){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #petitTableau tr{
+        height: 45px;
+        flex-direction: row;
+    }
+    .bloc{
+        position: relative;
+    }
+    input[type=submit]{
+        position: absolute;
+        top: 0;
+        font-size: small;
+        height: auto;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 0px 0px 10px 10px;
+    }
+    h4{
+        margin: 0 auto;
+    }
+    #button_bloc{
+        width: 50%;
+        left: 25%;
+    }
+    #button_public{
+        top: 50%;
+        width: 40%;
+    }
+
+    #public_profil > form > p{
+        width: 80%;
+    }
+    #modif_profil{
+        height: 100%;
+    }
+
+ 
+    #bloc2 > #grandTableau > div:nth-child(1){
+        height: 25%;
+        width: auto;
+        padding: 25px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    #bloc4 > div:nth-child(1){
+        width: calc(90% - 50px);
+        margin-bottom: 0;
+    }
+    #bloc1 > #grandTableau > div:nth-child(1), 
+    #bloc3 > #grandTableau > div:nth-child(1), 
+    #bloc6 > #grandTableau > div:nth-child(1){
+        width: auto;
+        height: auto;
+        padding: 25px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    #bloc6 > #grandTableau > div:nth-child(2){
+        width: calc(90% - 5px);
+        margin: 0 auto;
+    }
+    #bloc6 > #grandTableau > div:nth-child(2) > h4{
+        margin: auto;
+        width: 100%;
+        height: auto;
+        line-height: inherit;
+    }
+    #bloc4 > div:nth-child(1) > p{
+        font-size: small;
+    }
+    #bloc1 > #grandTableau > div:nth-child(2) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(2) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(2) > h4,
+    #bloc1 > #grandTableau > div:nth-child(3) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(3) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(3) > h4,
+    #bloc6 > #grandTableau > div:nth-child(3) > h4,
+    #bloc1 > #grandTableau > div:nth-child(4) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(4) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(4) > h4,
+    #bloc6 > #grandTableau > div:nth-child(4) > h4,
+    #bloc1 > #grandTableau > div:nth-child(5) > h4, 
+    #bloc2 > #grandTableau > div:nth-child(5) > h4, 
+    #bloc3 > #grandTableau > div:nth-child(5) > h4,
+    #bloc6 > #grandTableau > div:nth-child(5) > h4{
+        width: 40%;
+        height: auto;
+        line-height: inherit;
+    }
+    #bloc2 > #grandTableau > div:nth-child(3) > input:nth-child(1){
+        width: 40%;
+        height: auto;
+        line-height: inherit;
+    }
+    #bloc1 > #grandTableau > div, #bloc2 > #grandTableau > div, #bloc3 > #grandTableau > div, #bloc6 > #grandTableau > div{
+        width: 90%;
+        height: auto;
+        line-height: inherit;
+        font-size: x-small;
+    }
+    #bloc3 select{
+        width: calc(60% + 20px);
+    }
+    input[type=text], input[type="tel" i], input[type=password], input[type=date], input[type=number], select, textarea{
+        width: 60%;
+        height: auto;
+        line-height: inherit;
+        font-size: x-small;
+    }
+    #bloc1 > #grandTableau > div:nth-child(1) > label, #bloc3 > #grandTableau > div:nth-child(1) > label, #bloc6 > #grandTableau > div:nth-child(1) > label{
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+    }
+    #bloc1 > #grandTableau > div, #bloc2 > #grandTableau > div, #bloc3 > #grandTableau > div, #bloc6 > #grandTableau > div{
+        font-size: small;
+        margin: 0 auto;
+    }
+    p{
+        font-size: small;
+    }
+}

@@ -82,9 +82,20 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 				$html .= '<td><input type="text" name="prenom_cop" value="'.$profil['prenom_cop'].'"></td>';
 				$html .= '<td><input type="number" name="public" pattern="[0-1]{1}" value="'.$profil['public'].'" required></td>';
 				$html .= '<td><input type="date" name="cotiser" value="'.$profil['cotiser'].'"></td>';
-				$html .= '<td><input type="submit" name="modifier" value="Modifier" style="width: 100%; margin: 0.5% 1.5%;"></td>';
-				$html .= '<input type="email" name="email" value="'.$profil['email'].'" required style="display: none;">';
+				$html .= '<td>';
+				// Bouton Modifier
+				$html .= '<input type="submit" name="modifier" value="Modifier" style="width: 100%; margin-bottom: 4px;">';
+				// Champ email caché pour modification
+				$html .= '<input type="hidden" name="email" value="'.$profil['email'].'">';
 				$html .= '</form>';
+
+				// Formulaire pour Supprimer
+				$html .= '<form method="post" action="supprimer_utilisateur_admin.php" onsubmit="return confirm(\'Confirmer la suppression ?\')">';
+				$html .= '<input type="hidden" name="email" value="'.$profil['email'].'">';
+				$html .= '<input type="submit" name="supprimer" value="Supprimer" style="width: 100%; background-color: red; color: white;">';
+				$html .= '</form>';
+
+				$html .= '</td>';
 				$html .= '</tr>';
 			}
 			print($html);

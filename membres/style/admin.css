@@ -1,7 +1,12 @@
 #admin_bloc{
-    height: auto;
-    width: 90%;
-    margin: 2.5% 5%;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 7;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+    margin-bottom: 10px;
 }
 #tableau_choix{
     width: 95%;

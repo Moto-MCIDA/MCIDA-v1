@@ -340,10 +340,20 @@
 	    		$description = $db->query("SELECT * FROM balade_membre WHERE id_utilisateur = '$id_utilisateur' AND id_balade = '$id'");
 	    		$res_description = $description->fetch();
 				// on affiche sa photo de profil dans une div et on met le commentaire dans une autre div (qui sera visible que au survole de la photo)
-			    $html .= '<div id="scrollerItems">';
-			    $html .= '<img src="image/utilisateurs/'.$res_profil['email'].'/'.$res_profil['email'].'_profil.jpg">';
-			    $html .= '<p id="comm">'.$res_profil['nom'].'&ensp;'.$res_profil['prenom'].'<br>'.$res_description['nb_prs'].' personne(s) <br><br>'.$res_description['commentaire'].'</p>';
-			    $html .= '</div>';
+			    $hasComment = !empty($res_description['commentaire']);
+				$nb_prs = $res_description['nb_prs'];
+				$nom = $res_profil['nom'];
+				$prenom = $res_profil['prenom'];
+				$commentaire = $res_description['commentaire'];
+				$email = $res_profil['email'];
+
+				$html .= '<div class="scrollerItem" ' . ($hasComment ? 'onclick="openCommentModal(\''.addslashes($nom).'\', \''.addslashes($prenom).'\', \''.$nb_prs.'\', \''.addslashes(htmlspecialchars($commentaire)).'\')"' : '') . '>';
+				$html .= '<div class="badge-top like">'.$nb_prs.'</div>';
+				$html .= '<img src="image/utilisateurs/'.$email.'/'.$email.'_profil.jpg">';
+				if ($hasComment) {
+					$html .= '<div class="badge-bottom like" >💬</div>';
+				}
+				$html .= '</div>';
 			}
 		    $html .= '</div>';
 		    $html .= '</div>';
@@ -369,10 +379,21 @@
 	    		$res_profil = $profil->fetch();
 	    		$description = $db->query("SELECT * FROM balade_membre WHERE id_utilisateur = '$id_utilisateur' AND id_balade = '$id'");
 	    		$res_description = $description->fetch();
-			    $html .= '<div id="scrollerItems">';
-			    $html .= '<img src="image/utilisateurs/'.$res_profil['email'].'/'.$res_profil['email'].'_profil.jpg">';
-			    $html .= '<p id="comm">'.$res_profil['nom'].'&ensp;'.$res_profil['prenom'].'<br>'.$res_description['nb_prs'].' personne(s) <br><br>'.$res_description['commentaire'].'</p>';
-			    $html .= '</div>';
+			    // on affiche sa photo de profil dans une div et on met le commentaire dans une autre div (qui sera visible que au survole de la photo)
+			    $hasComment = !empty($res_description['commentaire']);
+				$nb_prs = $res_description['nb_prs'];
+				$nom = $res_profil['nom'];
+				$prenom = $res_profil['prenom'];
+				$commentaire = $res_description['commentaire'];
+				$email = $res_profil['email'];
+
+				$html .= '<div class="scrollerItem" ' . ($hasComment ? 'onclick="openCommentModal(\''.addslashes($nom).'\', \''.addslashes($prenom).'\', \''.$nb_prs.'\', \''.addslashes(htmlspecialchars($commentaire)).'\')"' : '') . '>';
+				$html .= '<div class="badge-top jsp">'.$nb_prs.'</div>';
+				$html .= '<img src="image/utilisateurs/'.$email.'/'.$email.'_profil.jpg">';
+				if ($hasComment) {
+					$html .= '<div class="badge-bottom jsp" >💬</div>';
+				}
+				$html .= '</div>';
 			}
 		    $html .= '</div>';
 		    $html .= '</div>';
@@ -398,10 +419,21 @@
 	    		$res_profil = $profil->fetch();
 	    		$description = $db->query("SELECT * FROM balade_membre WHERE id_utilisateur = '$id_utilisateur' AND id_balade = '$id'");
 	    		$res_description = $description->fetch();
-			    $html .= '<div id="scrollerItems">';
-			    $html .= '<img src="image/utilisateurs/'.$res_profil['email'].'/'.$res_profil['email'].'_profil.jpg">';
-			    $html .= '<p id="comm">'.$res_profil['nom'].'&ensp;'.$res_profil['prenom'].'<br>'.$res_description['nb_prs'].' personne(s) <br><br>'.$res_description['commentaire'].'</p>';
-			    $html .= '</div>';
+			    // on affiche sa photo de profil dans une div et on met le commentaire dans une autre div (qui sera visible que au survole de la photo)
+			    $hasComment = !empty($res_description['commentaire']);
+				$nb_prs = $res_description['nb_prs'];
+				$nom = $res_profil['nom'];
+				$prenom = $res_profil['prenom'];
+				$commentaire = $res_description['commentaire'];
+				$email = $res_profil['email'];
+
+				$html .= '<div class="scrollerItem" ' . ($hasComment ? 'onclick="openCommentModal(\''.addslashes($nom).'\', \''.addslashes($prenom).'\', \''.$nb_prs.'\', \''.addslashes(htmlspecialchars($commentaire)).'\')"' : '') . '>';
+				$html .= '<div class="badge-top dislike">'.$nb_prs.'</div>';
+				$html .= '<img src="image/utilisateurs/'.$email.'/'.$email.'_profil.jpg">';
+				if ($hasComment) {
+					$html .= '<div class="badge-bottom dislike" >💬</div>';
+				}
+				$html .= '</div>';
 			}
 		    $html .= '</div>';
 		    $html .= '</div>';

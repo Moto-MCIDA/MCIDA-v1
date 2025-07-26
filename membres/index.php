@@ -69,6 +69,55 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- ajoute de bibliothèque ajax -->
 	<title>MCIDA | <?php echo $_SESSION['user_nom'].' '.$_SESSION['user_prenom']; ?></title>
 </head>
+<style>
+	#scroller {
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+		padding: 10px;
+	}
+
+	.scrollerItem {
+		position: relative;
+		width: 80px;
+		height: 80px;
+		cursor: pointer;
+	}
+
+	.scrollerItem img {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	}
+
+	.badge-top {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		color: white;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+	.badge-bottom {
+		position: absolute;
+		bottom: -5px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		border-radius: 10px;
+		padding: 2px 6px;
+		font-size: 12px;
+	}
+</style>
 <body>
 	<?php 
 	// Ajout de la page fonction/header.php 
@@ -195,6 +244,15 @@ if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
 		}
 		?>
 	</div>
+	<div id="commentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+	<div style="background:white; padding:20px; border-radius:8px; max-width:400px; width:90%; position:relative;">
+		<span onclick="closeCommentModal()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:18px;">✖</span>
+		<h3 id="modalNomPrenom"></h3>
+		<p><strong>Nombre de personnes :</strong> <span id="modalNbPrs"></span></p>
+		<p><strong>Commentaire :</strong></p>
+		<p id="modalCommentaire"></p>
+	</div>
+</div>
 </body>
 </html>
 
@@ -219,6 +277,17 @@ function backfunction(){
 	var loading = $('#loading');
 	loading.addClass('yes');
 	loading.removeClass('no');
+}
+
+function openCommentModal(nom, prenom, nb, comm) {
+	document.getElementById('modalNomPrenom').innerText = nom + ' ' + prenom;
+	document.getElementById('modalNbPrs').innerText = nb;
+	document.getElementById('modalCommentaire').innerText = comm;
+	document.getElementById('commentModal').style.display = 'flex';
+}
+
+function closeCommentModal() {
+	document.getElementById('commentModal').style.display = 'none';
 }
 </script>
 

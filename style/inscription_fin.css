@@ -1,0 +1,234 @@
+#img_top h1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    color: #fff;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    mix-blend-mode: exclusion;
+    font-size: 750%;
+    margin: 0;
+    text-align: center;
+}
+#img_top_banniere_logo{
+    border-radius: 100%;
+    margin-left: 5%;
+}
+#block_principal{
+    width: 70%;
+    height: 50%;
+    overflow: auto;
+    margin: 0 auto;
+}
+#block_principal::-webkit-scrollbar{
+    display: hidden;
+    width: 0;
+}
+#second_block{
+    width: 100%;
+    height: 90%;
+    margin: 1% auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#inscription {
+    width: 95%;
+    padding: 1.5%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#inscription h1{
+    text-align: center;
+    font-family: monospace;
+    background-color: black;
+    font-size: 200%;
+    padding: 1.5%;
+    color: #fff;
+}
+
+#acceuil{
+    position: absolute;
+    left: 0.5%;
+    bottom: 0.5%;
+    padding: 2.5%;
+}
+#sous_box{
+	width: 100%;
+	height: 250px;
+    margin-top: 0;
+}
+#sous_box::-webkit-scrollbar{
+	display: hidden;
+	width: 0;
+}
+#box_defilement{
+	width: 100%;
+	height: 100%;
+    margin-top: 0;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+.bloc{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    margin-top: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+img{
+	width: 35%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+#paragraphe{
+	width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+}
+.none_b{
+	display: none;
+}
+
+label{
+	text-align: center;
+    font-family: monospace;
+    background-color: black;
+    font-size: 100%;
+    padding: 1.5%;
+    color: #fff;
+}
+p{
+	text-align: center;
+    padding: 2.5%;
+    font-family: monospace;
+    background-color: black;
+    font-size: 100%;
+    color: #fff;
+    width: 50%;
+    margin: 0 auto;
+}
+p:hover{
+	cursor: pointer;
+	font-weight: bold;
+    font-size: 125%;
+    padding: 2%;
+}
+.button {
+    display: inline-block;
+    background-color: black;
+    border: 2.5px double #cccccc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 100%;
+    padding: 8px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.button:hover {
+ 	background-color: white;
+ 	color: black;
+}
+input[type="file"]{
+	display: none;
+}
+input[type=text],
+input[type=password],
+input[type=tel]{
+    width: 100%;
+    margin: 1.5%;
+    padding: 0.5%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4a443a;
+    text-decoration: none;
+    outline: none;
+    color: #4a443a;
+}
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type=tel]::placeholder{
+    color: #4a443a;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=tel]:focus{
+    border: none;
+    border-bottom: 4px solid black;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+input[type=text]:focus::placeholder,
+input[type=password]:focus::placeholder,
+input[type=tel]:focus::placeholder{
+    color: black;
+}
+#bloc4_1 input[type="submit"],
+#bloc4_0 input[type="submit"]{
+	margin: 0 auto;
+    width: 75%;
+    padding: 1.5%;
+    text-align: center;
+    background-color: black;
+    border: none;
+    color: #fff;
+    font-size: 100%;
+}
+#bloc4_1 input[type="submit"]:hover,
+#bloc4_0 input[type="submit"]:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+#bloc3 select{
+	width: 50%;
+    height: 20%;
+    margin: auto;
+}
+#bloc3 #buttonn3{
+	width: 45%;
+    height: 5%;
+    margin: auto;
+    text-align: center;
+}
+#b0utton{
+    text-align: center;
+    padding: 1.5%;
+    font-family: monospace;
+    background-color: black;
+    font-size: 40%;
+    color: #fff;
+    width: 50%;
+    margin: 0 auto;
+}
+h6{
+    text-align: center; 
+    padding: 1.5%; 
+    font-family: monospace; 
+    background-color: black; 
+    font-size: 100%; 
+    color: #fff; 
+    width: 50%; 
+    margin: 0 auto;
+}
+h6:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}

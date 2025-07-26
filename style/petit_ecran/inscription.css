@@ -1,0 +1,51 @@
+@media screen and (max-width: 700px){
+	#img_top_banniere_logo{
+		width: 25%;
+    	margin-left: 10%;
+	}
+	#img_top h1{
+		font-size: 300%;
+    	padding-left: 35%;
+    	width: 65%;
+	}
+	#block_principal{
+		position: absolute;
+	    width: 95%;
+	    height: 65%;
+	    top: 25%;
+	    left: 2.5%;
+	}
+	#second_block{
+		justify-content: center;
+	}
+	form{
+		height: 100%;
+	}
+	#bloc{
+		width: 90%;
+		margin: auto;
+	}
+	input[type=text], 
+	input[type=email], 
+	input[type="tel" i], 
+	input[type=password], 
+	input[type=date], 
+	input[type=number], 
+	select, 
+	textarea {
+		width: 100%;
+		margin: 2.5% auto;
+		font-size: 100%;
+	}
+	input[type=submit]{
+		width: 75%;
+		font-size: 125%;
+	}
+	#acceuil{
+		position: absolute;
+	    left: 50%;
+	    bottom: 2.5%;
+	    transform: translate(-50%, 0%);
+	}
+
+}

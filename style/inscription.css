@@ -1,0 +1,181 @@
+#img_top h1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    color: #fff;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    mix-blend-mode: exclusion;
+    font-size: 750%;
+    margin: 0;
+    text-align: center;
+}
+#img_top_banniere_logo{
+    border-radius: 100%;
+    margin-left: 5%;
+}
+
+#inscription {
+    width: 95%;
+    padding: 1.5%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#inscription h1{
+    text-align: center;
+    font-family: monospace;
+    background-color: black;
+    font-size: 200%;
+    padding: 1.5%;
+    color: #fff;
+}
+input[type=text],
+input[type="tel" i], 
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=number],
+select,
+textarea{
+    width: 45%;
+    margin: 1.5%;
+    padding: 0.5%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4a443a;
+    text-decoration: none;
+    outline: none;
+    color: #4a443a;
+}
+input[type=date]{
+    margin-left: 2.5%;
+}
+select{
+    margin-right: 2.5%;
+}
+textarea{
+    width: 95%;
+    padding: 0;
+}
+input[type=number]{
+    margin-right: 2.5%;
+}
+input[type=text]::placeholder,
+input[type="tel" i]::placeholder,
+input[type=email]::placeholder,
+input[type=password]::placeholder,
+input[type=date]::placeholder,
+input[type=number]::placeholder,
+select::placeholder,
+textarea::placeholder{
+    color: #4a443a;
+}
+input[type=text]:focus,
+input[type="tel" i]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=nomber]:focus,
+select:focus,
+textarea:focus{
+    border: none;
+    border-bottom: 4px solid black;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+input[type=text]:focus::placeholder,
+input[type="tel" i]:focus::placeholder,
+input[type=email]:focus::placeholder,
+input[type=password]:focus::placeholder,
+input[type=date]:focus::placeholder,
+input[type=number]:focus::placeholder,
+select:focus::placeholder,
+textarea:focus::placeholder{
+    color: black;
+}
+input[type=submit]{
+    width: 50%;
+    padding: 1.5%;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    border: none;
+    color: #fff;
+    font-size: 100%;
+}
+input[type=submit]:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+a{
+    padding: 5%;
+    color: black;
+    outline: none;
+}
+a:hover{
+    font-weight: bold;
+    color: #4a443a;    
+}
+
+#block_principal{
+    width: 70%;
+    height: 50%;
+    overflow: auto;
+    margin: 0 auto;
+}
+#block_principal::-webkit-scrollbar{
+    display: hidden;
+    width: 0;
+}
+#second_block{
+    width: 100%;
+    height: 90%;
+    margin: 1% auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#bloc{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: justify;
+    margin: 0;
+}
+h4{
+    margin: 1.5%;
+}
+
+#acceuil{
+    position: absolute;
+    left: 0.5%;
+    bottom: 0.5%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}
+#acceuil > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#acceuil > img:nth-child(2){
+    visibility: hidden;
+}
+#acceuil:hover img:nth-child(1){
+    visibility: hidden;
+}
+#acceuil:hover img:nth-child(2){
+    visibility: visible;
+}

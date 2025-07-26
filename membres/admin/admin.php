@@ -6,7 +6,7 @@
 	include("../fonction/function_notification.php");
 
 if(isset($_SESSION['user_id']) AND !empty($_SESSION['user_id'])) {
-	if($_SESSION['user_id'] == 1 OR $_SESSION['user_id'] == 2 OR $_SESSION['user_id'] == 3) {
+	if($_SESSION['user_id'] == 1 OR $_SESSION['user_id'] == 2 OR $_SESSION['user_id'] == 3 OR $_SESSION['user_id'] == 5 OR $_SESSION['user_id'] == 22) {
 
 ?>
 
